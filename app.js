@@ -23,6 +23,9 @@ const resetGame = () => {
     count = 0;
     enableBoxes();
     msgContainer.classList.add("hide");
+    boxes.forEach((box) => {
+        box.disabled = false;
+    });
 };
 
 boxes.forEach((box) => {
@@ -89,5 +92,10 @@ const checkWinner = () => {
     return false;
 };
 
-newGamebtn.addEventListener("click", resetGame);
-resetBtn.addEventListener("click", resetGame);
+newGamebtn.addEventListener("click", () => {
+    resetGame();
+});
+
+resetBtn.addEventListener("click", () => {
+    resetGame();
+});
